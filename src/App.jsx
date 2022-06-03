@@ -4,6 +4,7 @@ import "./global.css";
 
 import styles from "./App.module.css";
 import { Post } from "./Post";
+import { Sidebar } from "./components/SIdebar";
 
 function App() {
 
@@ -11,7 +12,7 @@ function App() {
     <>
       <Header />
         <div className={styles.wrapper}>
-        <aside></aside>
+        <Sidebar />
         <main>
           <Post author="Thiago Costa" content="React and RoR" />
         </main>
