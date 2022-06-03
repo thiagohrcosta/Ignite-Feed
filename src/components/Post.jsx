@@ -19,6 +19,16 @@ export function Post() {
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at odio nec libero tristique cursus. In vel interdum mauris, in pretium metus. Cras sem libero, pulvinar non lacus luctus, consectetur condimentum augue.</p>
         <p><a>#New project</a> {" "} <a>#ReactJS</a> {" "} <a>#IGNITE</a> {" "} <a>#Rocketseat</a></p>
       </div>
+
+      <form className={styles.commentForm}>
+        <strong>Deixe o seu feedback</strong>
+        <textarea
+          placeholder="Deixe seu comentário"
+        />
+        <footer>
+          <button type="submit">Publicar</button>
+        </footer>
+      </form>
     </article>
   )
 }
