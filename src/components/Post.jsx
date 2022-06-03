@@ -14,9 +14,10 @@ export function Post() {
         <time title="11 de maio às 08h00" dateTime="22-05-11 08:00:00">Publicado há 1h </time>
       </header>
 
-      <div className={styles.contet}>
+      <div className={styles.content}>
         <p>Hi guys! I submit one more repository on my Github. Check it right now!</p>
-        <p>New project <a>#newContent #NLW #Rocketseat</a></p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at odio nec libero tristique cursus. In vel interdum mauris, in pretium metus. Cras sem libero, pulvinar non lacus luctus, consectetur condimentum augue.</p>
+        <p><a>#New project</a> {" "} <a>#ReactJS</a> {" "} <a>#IGNITE</a> {" "} <a>#Rocketseat</a></p>
       </div>
     </article>
   )
