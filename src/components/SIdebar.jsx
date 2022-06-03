@@ -9,8 +9,12 @@ export function Sidebar() {
         />
         
         <div className={styles.profile}>
+          <img 
+            className={styles.avatar} 
+            src="https://github.com/thiagohrcosta.png" 
+          />
           <strong>Thiago H. R. Costa</strong>
-          <strong>FullStack Developer</strong> 
+          <span>FullStack Developer</span> 
         </div>
 
         <footer>
