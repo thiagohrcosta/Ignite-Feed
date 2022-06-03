@@ -4,7 +4,7 @@ import "./global.css";
 
 import styles from "./App.module.css";
 import { Post } from "./Post";
-import { Sidebar } from "./components/SIdebar";
+import { Sidebar } from "./components/Sidebar";
 
 function App() {
 
