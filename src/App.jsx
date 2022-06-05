@@ -10,7 +10,7 @@ const posts = [
   {
     id: 1,
     author: {
-      avatarUlr: "https://github.com/thiagohrcosta.png",
+      avatarUrl: "https://github.com/thiagohrcosta.png",
       name: "Thiago Costa",
       role: "Fullstack Developer RoR | ReactJS"
     },
@@ -19,7 +19,7 @@ const posts = [
     { type: 'paragraph', content:     'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'},
     { type: 'link', content:     'github.com/thiagohrcosta'}
     ],
-    publishedAt: new Date(Date.now() - 1),
+    publishedAt: new Date(Date.now() - 1000 * 60 * 60 * 24 * 3),
   },
 ];
 
