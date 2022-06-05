@@ -6,6 +6,23 @@ import styles from "./App.module.css";
 import { Sidebar } from "./components/Sidebar";
 import { Post } from "./components/Post";
 
+const posts = [
+  {
+    id: 1,
+    author: {
+      avatarUlr: "https://github.com/thiagohrcosta.png",
+      name: "Thiago Costa",
+      role: "Fullstack Developer RoR | ReactJS"
+    },
+    content:[
+    { type: 'paragraph', content:     'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'},
+    { type: 'paragraph', content:     'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'},
+    { type: 'link', content:     'github.com/thiagohrcosta'}
+    ],
+    publishedAt: new Date(Date.now() - 1),
+  },
+];
+
 function App() {
 
   return (
@@ -14,7 +31,17 @@ function App() {
         <div className={styles.wrapper}>
           <Sidebar />
         <main>
-          <Post />
+          {
+            posts.map(post => {
+              return (
+                <Post
+                  author={post.author}
+                  content={post.content}
+                  publishedAt={post.publishedAt}
+                />
+              )
+            })
+          }
         </main>
         </div>
     </>
