@@ -1,28 +1,45 @@
+import { format, formatDistanceToNow } from 'date-fns'
+import ptBR from 'date-fns/locale/pt-BR';
+
 import { Avatar } from "./Avatar";
 import { Comment } from "./Comment";
 import styles from "./Post.module.css";
 
-export function Post(props) {
-  console.log(props)
+export function Post({ author, publishedAt, content }) {
+  const publishedDateFormatted = format(publishedAt, "dd 'de' LLLL 'às' HH:mm'h'", {
+    locale: ptBR
+  });
+
+  const publishedDateRelativeToNow = formatDistanceToNow(publishedAt, {
+    locale: ptBR,
+    addSuffix: true
+  })
+
   return (
     <article className={styles.post}>
       <header>
         <div className={styles.author}>
           <Avatar
-            src="https://github.com/thiagohrcosta.png"
+            src={author.avatarUrl}
           />
           <div className={styles.authorInfo}>
-            <strong>Thiago H. R. Costa</strong>
-            <span>FullStack Developer</span>
+            <strong>{author.name}</strong>
+            <span>{author.role}</span>
           </div>
         </div>
-        <time title="11 de maio às 08h00" dateTime="22-05-11 08:00:00">Publicado há 1h </time>
+        <time title="11 de maio às 08h00" dateTime={publishedAt.toISOString()}>
+          {publishedDateRelativeToNow}
+        </time>
       </header>
 
       <div className={styles.content}>
-        <p>Hi guys! I submit one more repository on my Github. Check it right now!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at odio nec libero tristique cursus. In vel interdum mauris, in pretium metus. Cras sem libero, pulvinar non lacus luctus, consectetur condimentum augue.</p>
-        <p><a>#New project</a> {" "} <a>#ReactJS</a> {" "} <a>#IGNITE</a> {" "} <a>#Rocketseat</a></p>
+        {content.map(item => {
+          if (item.type === 'paragraph') {
+            return <p>{item.content}</p>
+          } else if (item.type === "link"){
+            return <a href="#">{item.content}</a>
+          }
+        })}
       </div>
 
       <form className={styles.commentForm}>
