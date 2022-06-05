@@ -19,7 +19,7 @@ const posts = [
     { type: 'paragraph', content:     'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'},
     { type: 'link', content:     'github.com/thiagohrcosta'}
     ],
-    publishedAt: newDate(Date.now() - 1),
+    publishedAt: new Date(Date.now() - 1),
   },
 ];
 
@@ -33,7 +33,13 @@ function App() {
         <main>
           {
             posts.map(post => {
-              return <Post />
+              return (
+                <Post
+                  author={post.author}
+                  content={post.content}
+                  publishedAt={post.publishedAt}
+                />
+              )
             })
           }
         </main>
