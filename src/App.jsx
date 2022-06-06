@@ -15,8 +15,8 @@ const posts = [
       role: "Fullstack Developer RoR | ReactJS"
     },
     content:[
-    { type: 'paragraph', content:     'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'},
-    { type: 'paragraph', content:     'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'},
+    { type: 'paragraph', content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'},
+    { type: 'paragraph', content: 'Acabei de subir mais um projeto no github, não deixe de conferir. Foi utilizado ReactJS no frontend e Ruby on Rails no backend.'},
     { type: 'link', content:     'github.com/thiagohrcosta'}
     ],
     publishedAt: new Date(Date.now() - 1000 * 60 * 60 * 24 * 3),
@@ -35,6 +35,7 @@ function App() {
             posts.map(post => {
               return (
                 <Post
+                  key={post.id}
                   author={post.author}
                   content={post.content}
                   publishedAt={post.publishedAt}
